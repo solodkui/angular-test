@@ -1,0 +1,91 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.card {
+  background-color: $c-white;
+  box-shadow: 0px 4px 20px $c-blue-three;
+  padding: 24px;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  margin: auto;
+  // transform: scale(.5);
+  // opacity: 0;
+  transition: $t-normal;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__message {
+    width: 25px;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    cursor: pointer;
+    transition: $t-normal;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__photo {
+    &_wrapper {
+      width: 84.24px;
+      height: 84.24px;
+      border-radius: 10px;
+      overflow: hidden;
+      transform: rotate(45deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_image {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__content {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(122, 143, 165, 0.4);
+    padding-bottom: 5.5px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &_title {
+      color: $c-blue-four;
+      font-style: normal;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: rem(16);
+      line-height: rem(19);
+    }
+
+    &_subtitle {
+      font-style: normal;
+      font-weight: bold;
+      font-size: rem(20);
+      line-height: rem(24);
+    }
+  }
+}

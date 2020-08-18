@@ -1,0 +1,42 @@
+<div class="card" #card>
+  <div class="card__wrapper">
+    <!-- Message Icon -->
+    <div class="card__message">
+      <app-svg-message></app-svg-message>
+    </div>
+    <!-- Photo -->
+    <div class="card__photo">
+      <div class="card__photo_wrapper">
+        <img [src]="imageSrc" alt="" class="card__photo_image">
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="card__content">
+      <!-- ID -->
+      <div class="card__item">
+        <span class="card__item_title">ID:</span>
+        <span class="card__item_subtitle">{{ info.id }}</span>
+      </div>
+      <!-- Email -->
+      <div class="card__item" [title]="info.email">
+        <span class="card__item_title">Email:</span>
+        <span class="card__item_subtitle">{{ editText(info.email) }}</span>
+      </div>
+      <!-- First Name -->
+      <div class="card__item">
+        <span class="card__item_title">First_name:</span>
+        <span class="card__item_subtitle">{{ info.firstName }}</span>
+      </div>
+      <!-- Last Name -->
+      <div class="card__item">
+        <span class="card__item_title">Last_name:</span>
+        <span class="card__item_subtitle">{{ info.lastName }}</span>
+      </div>
+      <!-- Avatar -->
+      <div class="card__item" [title]="info.avatar">
+        <span class="card__item_title">Avatar:</span>
+        <span class="card__item_subtitle">{{ editText(info.avatar) }}</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<section class="card-list">
+  <div class="card-list__wrapper wrapper">
+    <!-- Cards -->
+    <div class="card-list__item" *ngFor="let user of users">
+      <div class="card-list__item_wrapper">
+        <app-card [info]="user"></app-card>
+      </div>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <nav class="card-list__navigation wrapper">
+    <a
+      (click)="goTo(item)"
+      class="card-list__navigation_item"
+      *ngFor="let item of navigationList"
+    >
+      <span [class]="item == page ? 'card-list__navigation_item--active' : ''">
+        {{ item }}
+      </span>
+    </a>
+  </nav>
+</section>

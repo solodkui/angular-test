@@ -1,0 +1,112 @@
+// Imports
+@import './variables';
+@import './mixins';
+// Main Styles
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+body {
+  background-color: $c-white;
+  color: $c-black;
+  font-family: $f-ruda;
+  font-size: rem(20);
+}
+// IOS phone number blue color bug fix
+a[href^=tel] {
+  color: inherit;
+  text-decoration:none;
+}
+// Box sizing partial styles:
+// Apply a natural box layout model to all elements
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+// Resets margins and paddings for headers, ul, ol and p
+h1, h2, h3, h4, h5, h6, ul, li, p, blockquote {
+  margin: 0;
+  padding: 0;
+}
+// Completely resets form items
+// ----------------------------
+// Super hard reset that removes all borders
+// and radius of all form items.
+// ============================
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+// Webkit appearance number spin
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+// Mozilla number appearance
+input[type=number] {
+  -moz-appearance:textfield;
+}
+// Change default chrome autofill
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px $c-white inset !important;
+}
+*::selection {
+  background-color: $c-silver-light !important;
+}
+// Custom Scroll
+*::-webkit-scrollbar {
+  width: 12px;
+  position: relative;
+  z-index: 999;
+}
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba($c-blue-two, .8);
+  background-color: rgba($c-silver, .3);
+}
+*::-webkit-scrollbar-thumb {
+  // border-radius: 10px;
+  background-color: $c-blue-two;
+  box-shadow: inset 0 0 5px rgba($c-silver, .8);
+  outline: none;
+}
+// Links
+a {
+  text-decoration: none;
+  color: $c-black;
+  transition: $t-normal;
+
+  &:hover {
+    color: $c-blue-two;
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  transition: $t-normal;
+
+  &:hover {
+    fill: $c-blue-two;
+  }
+}

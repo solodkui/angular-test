@@ -1,0 +1,25 @@
+// Colors
+$c-black: #000;
+$c-white: #fff;
+$c-silver: #7A8FA5;
+$c-silver-light: #E5E5E5;
+$c-blue-one: #8FB1D3;
+$c-blue-two: #8F96D3;
+$c-blue-three: #A5BCD2;
+$c-blue-four: #7A8FA5;
+
+// Fonts
+$f-ruda: 'Ruda', sans-serif;
+$f-roboto: 'Roboto', sans-serif;
+
+// Font Size
+$fs-base: 16;
+
+// Transition
+$t-normal: .35s cubic-bezier(.4,0,.2,1);
+
+// Text Shadow
+$ts-normal: 2px 2px 2px rgba($c-black, 0.4);
+
+// Box Shadow
+$bs-normal: 3px 4px 7px rgba($c-black, .3);
