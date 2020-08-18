@@ -12,20 +12,14 @@ export class CardComponent implements OnInit {
 
   @ViewChild('card', { static: true }) card: ElementRef;
 
-  baseImageSrc: String = '../../assets/images/users/';
-  imageSrc: string;
-
   constructor() {}
 
-  ngOnInit(): void {
-    this.imageSrc = this.baseImageSrc + '' + this.info.avatar;
-    // this.cardAnimation();
-  }
+  ngOnInit(): void {}
 
   cardAnimation(): void {
     TweenMax.to(this.card.nativeElement, 1, {
       scale: 1,
-      opacity: 1
+      opacity: 1,
     });
   }
 

@@ -2,8 +2,6 @@ import { User } from './../interfaces/user';
 import { UsersService } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import TweenMax from 'gsap';
-// import {  }
 
 @Component({
   selector: 'app-card-list',
@@ -14,8 +12,9 @@ export class CardListComponent implements OnInit {
   users: Array<User> = [];
   navigationList: Array<Number> = [];
   page: Number;
+  totalPages: Number;
 
-  constructor( 
+  constructor(
     private route: ActivatedRoute,
     private router: Router,
     private usersService: UsersService
@@ -24,29 +23,33 @@ export class CardListComponent implements OnInit {
   ngOnInit(): void {
     // Get Page
     this.page = this.route.snapshot.params.page;
-    this.getPageInfo();
+    // Get Users
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.usersService.getUsers(this.page).subscribe((response: any) => {
+      this.users = response.data;
+      this.totalPages = response.total_pages;
+      this.generateNavigation();
+    });
+  }
+
+  generateNavigation(): void {
+    this.navigationList = [];
+    for (let i = 1; i <= this.totalPages; i++) {
+      this.navigationList.push(i);
+    }
   }
 
   goTo(page: Number): void {
     this.router.navigate(['/card-list/' + page]);
     this.page = page;
-    this.getPageInfo();
-  }
-
-  getPageInfo(): void {
-    // Get Users
-    this. users = [];
-    this.users = this.usersService.getUsers(this.page);
-    // Generate Navigation
-    this.navigationList = [];
-    for (let i = 0; i < this.usersService.getPages(); i++) {
-      this.navigationList.push(i + 1);
-    }
+    this.getUsers();
   }
 
   editId(id: Number): String {
-    let
-      userid = id,
+    let userid = id,
       newId = 'card-item-' + userid;
 
     return newId;

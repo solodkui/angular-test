@@ -1,7 +1,7 @@
 export interface User {
   id: Number,
   email: String
-  firstName: String,
-  lastName: String,
+  first_name: String,
+  last_name: String,
   avatar: String
 }

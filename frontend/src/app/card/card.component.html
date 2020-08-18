@@ -7,7 +7,7 @@
     <!-- Photo -->
     <div class="card__photo">
       <div class="card__photo_wrapper">
-        <img [src]="imageSrc" alt="" class="card__photo_image">
+        <img [src]="info.avatar" alt="" class="card__photo_image">
       </div>
     </div>
     <!-- Content -->
@@ -25,12 +25,12 @@
       <!-- First Name -->
       <div class="card__item">
         <span class="card__item_title">First_name:</span>
-        <span class="card__item_subtitle">{{ info.firstName }}</span>
+        <span class="card__item_subtitle">{{ info.first_name }}</span>
       </div>
       <!-- Last Name -->
       <div class="card__item">
         <span class="card__item_title">Last_name:</span>
-        <span class="card__item_subtitle">{{ info.lastName }}</span>
+        <span class="card__item_subtitle">{{ info.last_name }}</span>
       </div>
       <!-- Avatar -->
       <div class="card__item" [title]="info.avatar">

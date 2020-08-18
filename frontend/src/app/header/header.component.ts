@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
     TweenMax.set(this.headerCard.nativeElement, {
       y: -200,
     });
+    // Starting Animation
     this.headerCardAnimation();
   }
 
