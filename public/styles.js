@@ -441,7 +441,7 @@ module.exports = content.locals || {};
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\programming\projects\test\frontend\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! D:\programming\projects\lastTest\frontend\src\styles.scss */"./src/styles.scss");
 
 
 /***/ })
